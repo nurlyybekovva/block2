@@ -46,14 +46,6 @@ This project demonstrates a basic Ether wallet smart contract that:
     npm install
     ```
 
-3. **Configure Environment Variables:**
-    - Create a [.env](http://_vscodecontentref_/0) file in the root directory.
-    - Add the following variables:
-      ```env
-      PRIVATE_KEY=your_private_key_here
-      ACCOUNT_ADDRESS=your_account_address_here
-      ```
-
 ## Compilation and Deployment
 
 1. **Compile and deploy the Smart Contract:**
@@ -64,7 +56,7 @@ This project demonstrates a basic Ether wallet smart contract that:
 
 1. **Or compile and deploy it in remix using your net, and then paste abi and contract address in app.js**    
     
-run the server:
+## run the server:
 ```bash
     npm install -g http-server
     http-server
