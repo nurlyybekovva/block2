@@ -1,4 +1,4 @@
-# EtherWallet
+# AI Model Marketplace dApp
 
 ## Team: Alikhan Sailybaev , Zarina Beketova , Alua Nurlybekova
 
@@ -8,9 +8,18 @@ This project demonstrates a basic Ether wallet smart contract that:
 - Displays the contract's balance.
 
 ## Features
-- Built with Solidity.
-- Deployed using Web3.js and Ganache.
-- Interaction scripts for deploying and interacting with the contract.
+## Smart Contract Functionalities:
+- List a Model: Add a new AI model with its name, description, and price.
+- Purchase a Model: Buy an AI model using its unique ID, with payments sent to the creator.
+- Rate a Model: Rate a purchased AI model to contribute to its overall score.
+- View Model Details: Access information such as name, description, price, creator, and average rating.
+- Withdraw Funds: Allow creators to withdraw earnings from sales.
+## Frontend Functionalities:
+- Form to list a new model.
+- Displaying available models.
+- Buttons to purchase and rate models.
+- Button to view details of specific models.
+- Withdrawal feature for creators.
 
 ## Technologies Used
 - [Solidity](https://www.soliditylang.org/) - Smart contract language.
@@ -28,8 +37,8 @@ This project demonstrates a basic Ether wallet smart contract that:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/sailybaev/blockchain
-    cd blockchain
+    git clone https://github.com/nurlyybekovva/block2
+    cd ai-model-market
     ```
 
 2. **Install dependencies:**
@@ -45,50 +54,27 @@ This project demonstrates a basic Ether wallet smart contract that:
       ACCOUNT_ADDRESS=your_account_address_here
       ```
 
-## Compilation
+## Compilation and Deployment
 
-1. **Compile the Smart Contract:**
+1. **Compile and deploy the Smart Contract:**
     ```bash
-    solc --abi --bin -o build contracts/EtherWallet.sol
+    truffle compile
+    truffle migrate
     ```
 
-    - This will generate the ABI and bytecode for the `EtherWallet` contract in the `build` directory.
-
-1. **Or compile it in remix using your net**    
+1. **Or compile and deploy it in remix using your net, and then paste abi and contract address in app.js**    
     
-    - copy and paste ABI and bytecode to the build/EtherWallet.json
-
-
-## Deployment
-
-1. **Start Ganache:**
-    - Ensure Ganache is running on `http://127.0.0.1:7545`.
-
-2. **Deploy the Contract:**
-    ```bash
-    node scripts/deploy.js
-    ```
-    - This will deploy the `EtherWallet` contract to the local blockchain.
-    - Upon successful deployment, the contract address will be displayed.
-
-## Interaction
-
-1. **Interact with the Contract:**
-    ```bash
-    node scripts/interact.js
-    ```
-    - This script allows you to:
-      - View contract methods.
-      - Check the contract's balance.
-      - Deposit Ether into the contract.
-      - Withdraw Ether (if you are the owner).
-
+run the server:
+```bash
+    npm install -g http-server
+    http-server
+```
 ## Troubleshooting
 
 - **Invalid Opcode Error:**
   - Ensure that the Solidity compiler version matches the pragma version in `EtherWallet.sol`.
   - Recompile the contract to update the ABI and bytecode.
-  - Verify that the `PRIVATE_KEY` and `ACCOUNT_ADDRESS` in the [.env](http://_vscodecontentref_/2) file are correct.
+  - Verify that the `API_KEY` and `MNEMONIC` in the .env file are correct.
   - Restart Ganache to reset the blockchain state and redeploy the contract.
 
 - **Deprecation Warnings:**
